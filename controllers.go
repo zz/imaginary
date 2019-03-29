@@ -138,6 +138,7 @@ func formController(w http.ResponseWriter, r *http.Request) {
 		{"Rotate", "rotate", "rotate=180"},
 		{"Flip", "flip", ""},
 		{"Flop", "flop", ""},
+		{"Proxy", "proxy", ""},
 		{"Thumbnail", "thumbnail", "width=100"},
 		{"Zoom", "zoom", "factor=2&areawidth=300&top=80&left=80"},
 		{"Color space (black&white)", "resize", "width=400&height=300&colorspace=bw"},
