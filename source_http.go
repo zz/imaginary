@@ -45,7 +45,7 @@ func (s *HTTPImageSource) fetchImage(url *url.URL, ireq *http.Request) ([]byte, 
 		}
 		res.Body.Close()
 		if res.StatusCode < 200 && res.StatusCode > 206 {
-			return nil, fmt.Errorf("error fetching image http headers: (status=%d) (url=%s)", res.StatusCode, req.URL.String())
+			return nil, fmt.Errorf("error fetching image http headers: (status=%d)", res.StatusCode)
 		}
 
 		contentLength, _ := strconv.Atoi(res.Header.Get("Content-Length"))
@@ -62,7 +62,7 @@ func (s *HTTPImageSource) fetchImage(url *url.URL, ireq *http.Request) ([]byte, 
 	}
 	defer res.Body.Close()
 	if res.StatusCode != 200 {
-		return nil, fmt.Errorf("error downloading image: (status=%d) (url=%s)", res.StatusCode, req.URL.String())
+		return nil, fmt.Errorf("error downloading image: (status=%d)", res.StatusCode)
 	}
 
 	// Read the body
